@@ -103,13 +103,6 @@
             </div>
 
             <div class="content">
-                <div class="section">
-                    <h2>Autenticação</h2>
-                    <div class="auth-note">
-                        <p>Esta API utiliza autenticação via Bearer Token. Inclua o token no header de suas requisições:</p>
-                        <code>Authorization: Bearer {seu_token}</code>
-                    </div>
-                </div>
 
                 <div class="section">
                     <h2>Endpoints Disponíveis</h2>
