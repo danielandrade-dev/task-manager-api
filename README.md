@@ -129,7 +129,7 @@ php artisan test
 
 | Nome | Perfil |
 |:-----|:-------|
-| Daniel Moreira | [LinkedIn](https://www.linkedin.com/in/seu-perfil) · [GitHub](https://github.com/seu-usuario) |
+| Daniel Moreira | [LinkedIn](https://www.linkedin.com/in/danielandrade-dev/) · [GitHub](https://github.com/danielandrade-dev) |
 
 ---
 
