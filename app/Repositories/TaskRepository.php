@@ -50,6 +50,6 @@ class TaskRepository
 
     public function nextTasks()
     {
-        return $this->model->nextTasks();
+        return $this->model->nextTasks()->get();
     }
 }

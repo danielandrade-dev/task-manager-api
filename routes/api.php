@@ -1,13 +1,18 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
 
-// Rotas da API de tarefas
-Route::prefix('tasks')->group(function () {
-    Route::get('/', 'App\\Http\\Controllers\\TaskController@index');
-    Route::post('/', 'App\\Http\\Controllers\\TaskController@store');
-    Route::get('/next', 'App\\Http\\Controllers\\TaskController@next');
-    Route::get('/{id}', 'App\\Http\\Controllers\\TaskController@show');
-    Route::put('/{id}', 'App\\Http\\Controllers\\TaskController@update');
-    Route::delete('/{id}', 'App\\Http\\Controllers\\TaskController@destroy');
-});
+
+Route::prefix('tasks')->controller(TaskController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::post('/', 'store');
+    Route::get('/next', 'next');
+    Route::get('/{id}', 'show');
+    Route::put('/{id}', 'update');
+    Route::delete('/{id}', 'destroy');
+})->middleware('guest');
