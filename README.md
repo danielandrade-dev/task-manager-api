@@ -70,15 +70,21 @@ git clone https://github.com/seu-usuario/task-manager-api.git
 # Acessar o diretório
 cd task-manager-api
 
-# Subir o ambiente Docker
+# Subir o ambiente Docker (app, nginx e PostgreSQL)
 docker-compose up -d
 
-# Acessar o container e rodar migrations
-docker exec -it nome_container_php bash
+# Acessar o container da aplicação para rodar comandos artisan, composer, etc.
+docker exec -it laravel_app bash
+
+# Rodar migrations (dentro do container)
 php artisan migrate
+
+# Rodar seeds
+php artisan db:seed
 ```
 
 > As variáveis de ambiente estão no arquivo `.env`, configuradas para PostgreSQL.
+> O nginx serve a aplicação na porta 8000 e o banco PostgreSQL na 5432.
 
 ---
 
